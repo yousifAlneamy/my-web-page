@@ -1,3 +1,5 @@
+// add this .js file to your html page and it'll calculate the body elements
+
 var countElements = {};
         
 var walk_the_DOM = function walk(node, func) {
