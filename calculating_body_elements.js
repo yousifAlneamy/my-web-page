@@ -31,5 +31,29 @@ var countFunction = function hasChildern(node) { // function deals with node's c
 
 walk_the_DOM(document.body, countFunction);// calling the function
 console.log("Counting elements object: " , countElements); // logging the object
+// I hope everything is clear
 
-// I hope every thing is clear
+// another way of doing it
+
+countElements = {}; // clear the object
+        
+var walk_the_DOM_2nd = function walk(nodeParent) {
+        
+    var childNodesList = nodeParent.childNodes; 
+    for (var i = 0; i < childNodesList.length; i++){
+            
+        if ( childNodesList[i].nodeType === 1 ){ // to filter the nodes from other node types such as #text        
+            var nodeNameStr = childNodesList[i].nodeName.toLocaleLowerCase();
+            if (! countElements.hasOwnProperty(nodeNameStr)){ // if the property isn't found in the object then assign it to 1, else increment by 1
+                countElements[nodeNameStr] = 1;
+            } else{
+                countElements[nodeNameStr]++;
+            }
+            if (childNodesList[i].hasChildNodes()){
+                walk(childNodesList[i]);
+            }
+        }
+    }
+};
+        walk_the_DOM_2nd(document.body);
+        console.log("Counting elements object: " , countElements);
