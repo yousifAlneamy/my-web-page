@@ -1,3 +1,41 @@
+/**Building a module of the walk-the-dom operation. Safer and better way.**/
+var walkTheDom = function() {
+    var countFunction = function hasChildern(node, obj){ // private function only visible to the returned object
+        if (node.hasChildNodes()){
+            for (var i = 0; i<node.childNodes.length; i++){
+
+                if ( node.childNodes[i].nodeType === 1 ){ // to filter the nodes from other node types like #text
+
+                    var nodeNameStr = node.childNodes[i].nodeName.toLocaleLowerCase();
+                    if (! obj.countElements.hasOwnProperty(nodeNameStr)){ // if the property not found in the object then assign it to 1, else increment by 1
+                        obj.countElements[nodeNameStr] = 1;
+                    } else{
+                        obj.countElements[nodeNameStr]++;
+                    }
+                }
+
+            }
+        }
+    };
+
+        return {
+            countElements: {},
+
+            walk: function (node) {
+                    countFunction(node, this);
+                    node = node.firstChild;
+                    while (node) {
+                        this.walk(node);
+                        node = node.nextSibling;
+                    }
+            }
+        }
+};
+var dom_walker = walkTheDom();
+dom_walker.walk(document.body);
+console.log("Counting elements object: " , dom_walker.countElements);
+
+
 // add this .js file to your html page and it'll calculate the body elements
 
 var countElements = {}; // public empty object is used to push elements name as properties and their values as a number of times the element found the HTML document.
