@@ -25,8 +25,8 @@ if (typeof Number.prototype.originToFixed !== "function") { // This is very impo
             
             if ( index_of_dot !== -1){ // is it a decimal?
                 var pos = index_of_dot + digits + 1;
-                if (str.charAt(pos) === "5") { // change "5" by "4" to test if this work (it will work)
-                    str = str.slice(0, pos) + "6";
+                if (str.charAt(pos) === "5") { // is the char at pos == "5"?        (change "5" by "4" to test if this work (it will work))
+                    str = str.slice(0, pos) + "6"; // replace the "5" at index of pos, by "6"
                     alert("dec changed from " + this.toString() + " to  " + str);
                 }   
             }
