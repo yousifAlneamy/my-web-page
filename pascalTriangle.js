@@ -1,5 +1,5 @@
 Function.prototype.method = function (name, func) { // here we're augmenting Function.prototype so we make a method available to all functions
-        this.prototype[name] = func; // here we're assigning a function available to all the objects of "this", because we're augmenting it to its prototype
+        this.prototype[name] = func; // here we're assigning a function available to all the objects represented by "this", because we're augmenting it to its prototype
         return this;
     };
 
@@ -13,7 +13,7 @@ var pascalTriangle = function(){
 
         return{
             calPasTri: function (level){
-                n = level - arr.length; // level - the default value
+                var n = level - arr.length; // level - the default value
 
                 for (var i = 0; i <= n ; i++){
                     var temp_arr= [];// Building row by row
