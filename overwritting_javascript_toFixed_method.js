@@ -1,6 +1,6 @@
 if (typeof Function.prototype.method !== "function") {
     Function.prototype.method = function (name, func) { // here we're augmenting Function.prototype so we can add/make a method available to all functions
-        this.prototype[name] = func; // here we're assigning a function available to all the objects of "this", because we're augmenting "func()" to its prototype property "name"
+        this.prototype[name] = func; // here we're assigning a function available to all the objects represented by "this", because we're augmenting "func()" to its prototype property "name"
         return this;
     };
 }
