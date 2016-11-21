@@ -1,7 +1,5 @@
 function getSequence(n){
-        
         var arr_sec = ["1"]; // default
-        
         for (var i = 0; i < n - 1; i++){
 
             var str_num = arr_sec[i];
@@ -15,13 +13,10 @@ function getSequence(n){
 
                 if ( check_no == Number(split_arr[j]) ){
                     conut_rep++;
-
                 } else{
                     new_level_str += conut_rep.toString() + check_no.toString();
-
                     check_no = Number(split_arr[j]);
                     conut_rep = 1;
-
                 }
             }
             new_level_str += conut_rep.toString() + check_no.toString();
