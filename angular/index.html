@@ -1,0 +1,46 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js'></script>
+    <script src="app/app.js"></script>
+    <script src="app/profiles/persons-list.module.js"></script>
+    <script src="app/profiles/persons.controller.js"></script>
+    <script src="app/profiles/persons-list.component.js"></script>
+    <script src="app/profiles/profile.module.js"></script>
+    <script src="app/profiles/profile.controller.js"></script>
+    <script src="app/profiles/profile.component.js"></script>
+    <script src="app/profiles/persons.service.js"></script>
+
+    <style>
+        .hiddenCustom {
+			display: none;
+		}
+        .showCustom {
+			padding-left: 520px;
+            padding-top: 30px;
+		}
+        .persons-list{
+            float: left;
+            width: 500px;
+        }
+        .list-record{
+            padding: 10px;
+            border: 2px solid gray;
+            border-bottom: 0px;
+            position: relative;
+        }
+        .a-see{
+            float: right;
+            position: absolute;
+            right: 10px;
+        }
+    
+    </style>
+           
+           
+</head>
+<body ng-app="app">
+    <persons-list></persons-list>
+    <profile></profile>
+</body>
+</html>

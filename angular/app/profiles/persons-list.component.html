@@ -1,0 +1,6 @@
+<div class="persons-list">
+    <div class="list-record" ng-repeat="obj in ctrl.personsArray">
+        <span class="span-name"><strong>{{ obj.name }}</strong></span>
+        <a class="a-see" href="#" ng-click="ctrl.showProfile(obj)">See</a>
+    </div>
+</div>
