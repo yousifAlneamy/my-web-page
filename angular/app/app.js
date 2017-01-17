@@ -1,1 +1,1 @@
-var app = angular.module('app',['app.personsList', 'app.profile']);
+var app = angular.module('app',['app.personsList']);

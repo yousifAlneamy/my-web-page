@@ -1,15 +1,12 @@
 function personsController(personsService) {
     var that = this;
-    personsService.personsController = that;
     that.personsArray = [];
+    that.showProfile = personsService.showProfile; // referencing the method of personsService, so that I can use it within current controller scope
+    
     personsService.getPersons().then(function(response) {
         console.log(response);
         that.personsArray = response.data;
     }).catch(function(error) {
         console.log(error);
     });
-    
-    that.showProfile = function(personObject){
-        personsService.showProfile(personObject);
-    }
 }
