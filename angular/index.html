@@ -2,19 +2,15 @@
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js'></script>
-    <script src="app/profiles/people.module.js"></script>
-    <script src="app/profiles/people.controller.js"></script>
-    <script src="app/profiles/people.component.js"></script>
-    <script src="app/profiles/person.controller.js"></script>
-    <script src="app/profiles/person.component.js"></script>
-    <script src="app/profiles/people.service.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/people-person/people/people.module.js"></script>
+    <script src="app/people-person/people/people.controller.js"></script>
+    <script src="app/people-person/people/people.component.js"></script>
+    <script src="app/people-person/person/person.component.js"></script>
+    <script src="app/people-person/people/people.service.js"></script>
 
     <style>
-        .hiddenCustom {
-			display: none;
-		}
-        .showCustom {
+        .person-div {
 			padding-left: 520px;
             padding-top: 30px;
 		}
@@ -39,7 +35,7 @@
            
 </head>
 <body ng-app="app">
-    <people></people>
-    <person></person>
+    <people shared-data="personObject"></people>
+    <person shared-data="personObject"></person>
 </body>
 </html>
