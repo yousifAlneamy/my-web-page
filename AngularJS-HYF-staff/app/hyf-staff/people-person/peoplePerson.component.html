@@ -1,0 +1,24 @@
+<form class="form-inline container">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" ng-model="ctrl.service.search">
+    </div>
+    
+    <label for="sel1">Order By:</label>
+      <select class="form-control" ng-model="ctrl.service.order">
+        <option selected="selected">id</option>
+        <option>name</option>
+        <option>role</option>
+      </select>
+    
+</form>
+
+<div class="people container" ng-show="ctrl.service.peopleArray">
+    <div class="list-record" ng-repeat="obj in ctrl.service.peopleArray | filter:{name: ctrl.service.search} | orderBy: ctrl.service.order">
+        <span class="span-name"><strong>{{ obj.name }}</strong></span>
+        <a class="a-see" ui-sref="person({id: obj.id})">See</a>
+    </div>
+    <bindings on-alert="ctrl.onClick(message)"></bindings>
+</div>
+
+<person shared-data="ctrl.personObject"></person>

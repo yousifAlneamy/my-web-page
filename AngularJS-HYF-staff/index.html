@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>HYF</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js'></script>
+    <script src="http://unpkg.com/angular-ui-router@1.0.0-beta.1/release/angular-ui-router.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/hyf-staff/people-person/peoplePerson.module.js"></script>
+    <script src="app/hyf-staff/people-person/peoplePerson.controller.js"></script>
+    <script src="app/hyf-staff/people-person/peoplePerson.component.js"></script>
+    <script src="app/hyf-staff/people-person/person/person.component.js"></script>
+    <script src="app/hyf-staff/people-person/people.service.js"></script>
+    <script src="app/hyf-staff/people-person/add-person/addPerson.controller.js"></script>
+    <script src="app/hyf-staff/people-person/add-person/addPerson.component.js"></script>
+    <script src="app/hyf-staff/header/header.controller.js"></script>
+    <script src="app/hyf-staff/header/header.component.js"></script>
+    <script src="app/hyf-staff/people-person/my-profile/myProfile.contorller.js"></script>
+    <script src="app/hyf-staff/people-person/my-profile/my-profile.component.js"></script>
+    
+
+    <style>
+        .person-div {
+			padding-left: 420px;
+            padding-top: 30px;
+		}
+        .people{
+            float: left;
+            width: 400px;
+        }
+        .list-record{
+            padding: 10px;
+            border: 2px solid gray;
+            border-bottom: 0px;
+            position: relative;
+        }
+        .list-record:last-of-type {
+            border-bottom: 2px solid gray;
+        }
+        .a-see{
+            float: right;
+            position: absolute;
+            right: 10px;
+        }
+    </style>
+           
+</head>
+<body ng-app="app">
+    
+    <header-component></header-component>
+    
+    <div class="main">
+        <ui-view></ui-view>
+    </div>
+</body>
+</html>
