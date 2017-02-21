@@ -1,0 +1,16 @@
+show databases;
+use class6;
+show tables;
+describe todos;
+
+SELECT COUNT(*) FROM todos;
+
+SELECT * FROM todos WHERE Done;
+
+SELECT * FROM todos WHERE NOT Done;
+
+SELECT * FROM todos ORDER BY Id DESC; #assuming that Id is an Auto-increment
+
+SELECT * FROM todos WHERE Id = (SELECT MAX(Id) FROM todos);
+
+SELECT * FROM todos WHERE Name LIKE "%databases%";
