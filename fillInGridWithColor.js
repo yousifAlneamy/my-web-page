@@ -23,7 +23,7 @@ function getPoints(matrix, row, column) {
   return points;
 }
 
-function fillGrid(matrix, row, column) {
+function fillGrid(matrix, row, column, color) {
   
   if (!matrix || matrix.length == 0){
     return null;
@@ -41,7 +41,7 @@ function fillGrid(matrix, row, column) {
     
     let points = getPoints(matrix, process[0], process[1]); // points of the same color
     console.log(points);
-    matrix[process[0]][process[1]] = 1;
+    matrix[process[0]][process[1]] = color;
     
     for (let i = 0; i < points.length; i++) {
       let point = points[i];
