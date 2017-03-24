@@ -23,7 +23,7 @@ function getPoints(matrix, row, column) {
   return points;
 }
 
-function fillGrid(matrix, row, column, color) {
+function fillGrid(matrix, row, column, color = 1) {
   
   if (!matrix || matrix.length == 0){
     return null;
@@ -34,10 +34,10 @@ function fillGrid(matrix, row, column, color) {
   var q = [];
   q.push([row, column]);
   console.log(q);
-  hash[row + " " + column];
+  hash[row + "" + column];
   while (q.length > 0) {
     
-    let process = q.pop();
+    let process = q.shift();
     
     let points = getPoints(matrix, process[0], process[1]); // points of the same color
     console.log(points);
@@ -45,8 +45,8 @@ function fillGrid(matrix, row, column, color) {
     
     for (let i = 0; i < points.length; i++) {
       let point = points[i];
-      if (! hash[point[0] + " " + point[1]]) {
-        hash[point[0] + " " + point[1]] = true;
+      if (! hash[point[0] + "" + point[1]]) {
+        hash[point[0] + "" + point[1]] = true;
         q.push(point);
         console.log(point);
       }
